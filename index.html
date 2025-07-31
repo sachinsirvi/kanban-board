@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav class="navigation-panel">
+      <div class="status-box">
+        <div class="status status-unconfirmed">unconfirmed</div>
+        <div class="status status-confirmed">confirmed</div>
+        <div class="status status-indev">in dev</div>
+        <div class="status status-closed">closed</div>
+      </div>
+
+      <select class="status-dropdown">
+        <option value="" >Status</option>
+        <option value="unconfirmed">unconfirmed</option>
+        <option value="confirmed">confirmed</option>
+        <option value="indev">in dev</option>
+        <option value="closed">closed</option>
+      </select>
+
+      <div class="task-actions">
+        <button class="task-button add-task">Add task ＋</button>
+        <button class="task-button remove-task">Delete Task Ｘ</button>
+      </div>
+      <button class="task-button theme-button" id="themeButton">☼</button>
+    </nav>
+
+    <div class="ticket-model">
+        <!-- LEFT: Task input -->
+        <div class="ticket-description">
+          <h3>Add Task</h3>
+          <textarea type="text" class="ticket-text" placeholder="Describe your task..." rows="3"></textarea>
+        </div>
+      
+        <!-- RIGHT: Color selectors -->
+        <div class="ticket-colors">
+          <button class="ticket ticket-colors-unconfirmed" title="Unconfirmed"></button>
+          <button class="ticket ticket-colors-confirmed" title="Confirmed"></button>
+          <button class="ticket ticket-colors-indev" title="In Development"></button>
+          <button class="ticket ticket-colors-closed" title="Closed"></button>
+        </div>
+      </div>
+      
+    <script src="./script.js"></script>
+  </body>
+</html>

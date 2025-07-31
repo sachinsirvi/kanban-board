@@ -1,0 +1,281 @@
+/* Reset Default Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =====================================
+   THEME VARIABLES
+===================================== */
+:root {
+  /* Light Mode Variables */
+  --bg-color: #FCECE0;
+  --text-color: white;
+  --nav-bg: #F8CED3;
+  --nav-shadow: 0px 5px 5px #664C36;
+  --status-unconfirmed: #3D314A;
+  --status-confirmed: #684756;
+  --status-indev: #AB8476;
+  --status-closed: #D9BFA1;
+  --status-box-shadow: 3px 3px 10px #b37c4c;
+  --task-add: #D17780;
+  --task-remove: #C2CFA1;
+  --task-shadow: 0 4px 3px rgba(21, 20, 20, 0.15);
+  --theme-bg: #F6A07B;
+}
+
+body.dark-mode {
+  --bg-color: #050424;
+  --text-color: white;
+  --nav-bg: #030751;
+  --nav-shadow: 0px 5px 10px rgb(109, 109, 93);
+  --status-unconfirmed: #053D8B;
+  --status-confirmed: #1164B0;
+  --status-indev: #298BC8;
+  --status-closed: #3FB7DB;
+  --status-box-shadow: 0px 5px 5px rgb(138, 43, 226);
+  --task-add: #43328d;
+  --task-remove: #18435e;
+  --theme-border: 1px solid white;
+  --theme-bg: transparent;
+}
+
+/* =====================================
+   BASE STYLES
+===================================== */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.3s ease;
+}
+
+/* =====================================
+   NAVIGATION PANEL
+===================================== */
+.navigation-panel {
+  background-color: var(--nav-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  box-shadow: var(--nav-shadow);
+  transition: 0.3s ease;
+}
+
+/* =====================================
+   STATUS BOX
+===================================== */
+.status-box {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 30px;
+  box-shadow: var(--status-box-shadow);
+}
+
+/* =====================================
+   STATUS BADGES
+===================================== */
+.status {
+  padding: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: var(--task-shadow);
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  color: var(--text-color);
+}
+
+.status-unconfirmed {
+  background-color: var(--status-unconfirmed);
+}
+.status-confirmed {
+  background-color: var(--status-confirmed);
+}
+.status-indev {
+  background-color: var(--status-indev);
+}
+.status-closed {
+  background-color: var(--status-closed);
+}
+
+/* =====================================
+   BUTTONS
+===================================== */
+.task-button {
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  padding: 1rem;
+  box-shadow: var(--task-shadow);
+  transition: 0.2s;
+  color: var(--text-color);
+}
+
+.add-task {
+  background-color: var(--task-add);
+}
+
+.remove-task {
+  background-color: var(--task-remove);
+}
+
+/* =====================================
+   THEME TOGGLE BUTTON
+===================================== */
+.theme-button {
+  border: var(--theme-border);
+  background-color: var(--theme-bg);
+  color: var(--text-color);
+}
+
+/* =====================================
+   HOVER EFFECTS
+===================================== */
+.status:hover,
+.task-button:hover {
+  transform: scale(1.09);
+  opacity: 0.9;
+}
+/* =====================================
+   🎫 TICKET MODEL
+===================================== */
+.ticket-model {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8rem auto 0;
+    width: 400px;
+    max-width: 98vw;
+    min-width: 0;
+    height: auto;
+    border-radius: 30px;
+    background-color: #DBDAD9;
+    box-shadow: 4px 5px 5px #D1C2CE;
+    transition: background-color 0.3s ease;
+
+  }
+  
+  /* LEFT - Description Input */
+  .ticket-description {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0rem 1.5rem 1.5rem;
+  }
+  
+  .ticket-description h3 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+  }
+  
+  .ticket-text {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid var(--text-color);
+    outline: none;
+   
+    color: black;
+  }
+  
+  body.dark-mode .ticket-text {
+    background-color: #1e1e2f;
+    color: white;
+  }
+
+  body.dark-mode .ticket-model {
+    background-color: transparent;
+    box-shadow: 4px 0px 10px rgb(138, 43, 226);
+    
+  }
+  
+  /* RIGHT - Color Options */
+  .ticket-colors {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    height: 100%;
+
+  }
+  
+  /* Color Buttons */
+  .ticket {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  
+  .ticket:hover {
+    transform: scale(1.1);
+    opacity: 0.85;
+  }
+  
+  /* Color Tokens */
+  .ticket-colors-unconfirmed {
+    background-color: var(--status-unconfirmed);
+  }
+  
+  .ticket-colors-confirmed {
+    background-color: var(--status-confirmed);
+  }
+  
+  .ticket-colors-indev {
+    background-color: var(--status-indev);
+  }
+  
+  .ticket-colors-closed {
+    background-color: var(--status-closed);
+  }
+
+.status-dropdown {
+    display:none;
+    padding: 0.6rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    border: 1px solid black;
+    box-shadow: var(--task-shadow);
+    outline: none;
+}
+
+/* Mobile styles */
+@media (max-width:600px) {
+    .navigation-panel {
+      flex-direction: row; 
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .status-dropdown {
+        display: inline-block; 
+    }
+
+    .status-box {
+        display: none;;
+    }
+    .ticket-model {
+        width: 80vw;
+        max-width: 450px;
+        min-width: 0;
+        height: auto;
+    }
+
+  }
+  
