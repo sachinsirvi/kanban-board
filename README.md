@@ -3,6 +3,9 @@
 A modern, responsive Kanban board built with **HTML, CSS, and JavaScript**.  
 Organize your tasks, filter by status, and switch between light and dark mode—works on any device!
 
+## Live Demo
+- https://sachinsirvi.github.io/kanban-board/
+
 ## Features
 
 - Add, edit, and delete tasks
